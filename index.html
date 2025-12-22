@@ -1,0 +1,939 @@
+<html lang="vi">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thiệp cưới Trần Hoàng &amp; Lan Anh | 27.12.2025</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Great+Vibes&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;family=Montserrat:wght@300;400;500;600&amp;display=swap"
+        rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        burgundy: '#800020',
+                        gold: '#D4AF37',
+                        cream: '#FDFBF7',
+                        darkText: '#2C2C2C'
+                    },
+                    fontFamily: {
+                        script: ['"Great Vibes"', 'cursive'],
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Montserrat"', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'fade-in-up': 'fadeInUp 1s ease-out forwards',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #FDFBF7;
+            color: #2C2C2C;
+            overflow-x: hidden;
+        }
+
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #FDFBF7;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #800020;
+            border-radius: 4px;
+        }
+
+        .typewriter {
+            border-right: 2px solid rgba(255, 255, 255, 0.75);
+            white-space: nowrap;
+            overflow: hidden;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            animation: blink-caret .75s step-end infinite;
+        }
+
+        @keyframes blink-caret {
+
+            from,
+            to {
+                border-color: transparent
+            }
+
+            50% {
+                border-color: white;
+            }
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased relative">
+
+    <!-- Audio Element -->
+    <audio id="bgMusic" loop="">
+        <source
+            src="./audio/music.mp3"
+            type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Music Control -->
+    <button id="musicToggle"
+        class="fixed bottom-6 right-6 z-50 bg-burgundy/80 text-white p-3 rounded-full shadow-lg hover:bg-burgundy transition-all hidden">
+        <span class="material-symbols-outlined animate-spin-slow" id="musicIcon">music_note</span>
+    </button>
+
+    <!-- PART 1: INTRO SCREEN -->
+    <div id="introScreen"
+        class="fixed inset-0 bg-black z-[100] flex flex-col items-center justify-center text-center px-4 transition-opacity duration-1000"
+        style="opacity: 1;">
+        <div class="max-w-2xl w-full">
+            <p id="typingText" class="text-white/90 font-serif text-lg md:text-2xl mb-8 italic min-h-[40px]"></p>
+            <button id="openBtn"
+                class="bg-transparent border border-white/30 text-white px-8 py-3 rounded-full hover:bg-white hover:text-black transition-all duration-500 transform">
+                <span class="tracking-widest uppercase text-sm">Mở Thiệp Hồng</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT CONTAINER (Hidden initially) -->
+    <main id="mainContent" class="opacity-0 transition-opacity duration-1000" style="opacity: 0;">
+
+        <!-- PART 2: HERO SECTION -->
+        <section class="relative h-screen min-h-[600px] flex items-center justify-center text-center overflow-hidden">
+            <!-- Background Image/Video -->
+            <!-- Background Desktop -->
+            <div class="absolute inset-0 z-0 parallax grayscale-[30%] hidden md:block"
+                style="background-image: url('./images/share_preview1.jpg');">
+                <div class="absolute inset-0 bg-black/30"></div>
+            </div>
+
+            <!-- Background Mobile -->
+            <div class="absolute inset-0 z-0 parallax grayscale-[30%] block md:hidden"
+                style="background-image: url('./images/bg_main.png');">
+                <div class="absolute inset-0 bg-black/30"></div>
+            </div>
+
+            <div class="relative z-10 text-white p-6 animate-float">
+                <p class="text-gold tracking-[0.2em] text-sm md:text-base uppercase mb-4">We Are Getting Married</p>
+                <h1 class="font-script text-6xl md:text-8xl mb-2 text-white drop-shadow-lg">Trần Hoàng</h1>
+                <p class="font-script text-4xl md:text-5xl my-2 text-gold">&amp;</p>
+                <h1 class="font-script text-6xl md:text-8xl mb-8 text-white drop-shadow-lg">Lan Anh</h1>
+
+                <div class="inline-block border-t border-b border-white/50 py-2 px-6 mb-8 backdrop-blur-sm">
+                    <p class="font-serif text-2xl tracking-widest">27 . 12 . 2025</p>
+                </div>
+
+                <!-- Countdown -->
+                <div id="countdown" class="flex justify-center gap-4 md:gap-8 font-serif text-center">
+                    <div>
+                        <span class="text-3xl md:text-4xl font-bold" id="days">22</span>
+                        <p class="text-xs uppercase text-white/80">Ngày</p>
+                    </div>
+                    <div>
+                        <span class="text-3xl md:text-4xl font-bold" id="hours">19</span>
+                        <p class="text-xs uppercase text-white/80">Giờ</p>
+                    </div>
+                    <div>
+                        <span class="text-3xl md:text-4xl font-bold" id="minutes">08</span>
+                        <p class="text-xs uppercase text-white/80">Phút</p>
+                    </div>
+                    <div>
+                        <span class="text-3xl md:text-4xl font-bold" id="seconds">37</span>
+                        <p class="text-xs uppercase text-white/80">Giây</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="absolute bottom-10 w-full text-center animate-bounce z-10">
+                <span class="material-symbols-outlined text-white text-3xl">keyboard_arrow_down</span>
+            </div>
+        </section>
+
+        <!-- PART 3: FORMAL ANNOUNCEMENT -->
+        <section class="py-20 px-4 relative"
+            style="background: linear-gradient(135deg, #FFF8F8 0%, #FFEBEB 50%, #FFF8F8 100%);">
+            <!-- Subtle Red Pattern Background -->
+            <div class="absolute inset-0 opacity-[0.03]"
+                style="background-image: radial-gradient(circle at 20% 50%, rgba(220,20,60,0.3) 1px, transparent 1px), radial-gradient(circle at 80% 80%, rgba(220,20,60,0.3) 1px, transparent 1px); background-size: 50px 50px;">
+            </div>
+
+            <div class="max-w-4xl mx-auto relative">
+                <div class="bg-white shadow-2xl p-8 md:p-12 rounded-xl relative overflow-hidden"
+                    style="border: 3px solid rgba(220,20,60,0.2);">
+
+                    <!-- Elegant Red Accent Borders -->
+                    <div class="absolute top-0 left-0 w-20 h-20">
+                        <div class="absolute top-0 left-0 w-full h-1"
+                            style="background: linear-gradient(90deg, #DC143C, transparent);"></div>
+                        <div class="absolute top-0 left-0 w-1 h-full"
+                            style="background: linear-gradient(180deg, #DC143C, transparent);"></div>
+                        <div class="absolute top-2 left-2 w-12 h-12 border-t-2 border-l-2"
+                            style="border-color: rgba(212,175,55,0.5); border-radius: 4px;"></div>
+                    </div>
+                    <div class="absolute top-0 right-0 w-20 h-20">
+                        <div class="absolute top-0 right-0 w-full h-1"
+                            style="background: linear-gradient(270deg, #DC143C, transparent);"></div>
+                        <div class="absolute top-0 right-0 w-1 h-full"
+                            style="background: linear-gradient(180deg, #DC143C, transparent);"></div>
+                        <div class="absolute top-2 right-2 w-12 h-12 border-t-2 border-r-2"
+                            style="border-color: rgba(212,175,55,0.5); border-radius: 4px;"></div>
+                    </div>
+                    <div class="absolute bottom-0 left-0 w-20 h-20">
+                        <div class="absolute bottom-0 left-0 w-full h-1"
+                            style="background: linear-gradient(90deg, #DC143C, transparent);"></div>
+                        <div class="absolute bottom-0 left-0 w-1 h-full"
+                            style="background: linear-gradient(0deg, #DC143C, transparent);"></div>
+                        <div class="absolute bottom-2 left-2 w-12 h-12 border-b-2 border-l-2"
+                            style="border-color: rgba(212,175,55,0.5); border-radius: 4px;"></div>
+                    </div>
+                    <div class="absolute bottom-0 right-0 w-20 h-20">
+                        <div class="absolute bottom-0 right-0 w-full h-1"
+                            style="background: linear-gradient(270deg, #DC143C, transparent);"></div>
+                        <div class="absolute bottom-0 right-0 w-1 h-full"
+                            style="background: linear-gradient(0deg, #DC143C, transparent);"></div>
+                        <div class="absolute bottom-2 right-2 w-12 h-12 border-b-2 border-r-2"
+                            style="border-color: rgba(212,175,55,0.5); border-radius: 4px;"></div>
+                    </div>
+
+                    <!-- Top Ornament -->
+                    <div class="text-center mb-4">
+                        <div class="inline-flex items-center gap-3">
+                            <div class="w-16 h-px"
+                                style="background: linear-gradient(90deg, transparent, #DC143C, transparent);"></div>
+                            <span class="text-2xl" style="color: #DC143C;">❖</span>
+                            <div class="w-16 h-px"
+                                style="background: linear-gradient(90deg, transparent, #DC143C, transparent);"></div>
+                        </div>
+                    </div>
+
+                    <!-- Title Section -->
+                    <div class="text-center mb-8 relative">
+                        <h2 class="font-serif text-4xl md:text-5xl uppercase tracking-[0.2em] mb-4 font-bold relative inline-block"
+                            style="color: #8B0000;">
+                            <span class="text-5xl md:text-6xl">喜</span>
+                            <span class="block text-2xl md:text-3xl mt-2 tracking-widest" style="color: #DC143C;">Thiệp
+                                Báo Hỷ</span>
+                            <span class="text-5xl md:text-6xl" style="color: #8B0000;">喜</span>
+                        </h2>
+
+                        <div class="flex items-center justify-center gap-2 my-3">
+                            <div class="h-px w-12 md:w-20"
+                                style="background: linear-gradient(90deg, transparent, rgba(220,20,60,0.4));"></div>
+                            <span class="text-lg md:text-xl" style="color: #D4AF37;">✦</span>
+                            <div class="h-px w-12 md:w-20"
+                                style="background: linear-gradient(270deg, transparent, rgba(220,20,60,0.4));"></div>
+                        </div>
+                    </div>
+
+                    <!-- Family Information Grid -->
+                    <div class="grid md:grid-cols-2 gap-6 md:gap-10 relative my-8 md:my-12">
+                        <!-- Elegant Center Divider -->
+                        <div class="hidden md:block absolute left-1/2 top-0 bottom-0 -translate-x-1/2">
+                            <div class="absolute inset-0 w-px"
+                                style="background: linear-gradient(180deg, transparent, rgba(220,20,60,0.3), transparent);">
+                            </div>
+                            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md"
+                                style="border: 2px solid #DC143C;">
+                                <span style="color: #DC143C; font-size: 20px;">❤</span>
+                            </div>
+                        </div>
+
+                        <!-- GROOM FAMILY -->
+                        <div class="text-center space-y-4 md:space-y-6 relative">
+                            <div class="inline-block px-6 py-3 rounded-lg shadow-md relative"
+                                style="background: linear-gradient(135deg, rgba(220,20,60,0.08), rgba(220,20,60,0.04)); border: 2px solid rgba(220,20,60,0.2);">
+                                <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-white px-3">
+                                    <span class="text-2xl"></span>
+                                </div>
+                                <span class="font-serif text-xl font-bold uppercase tracking-wider"
+                                    style="color: #8B0000;">Nhà Trai</span>
+                            </div>
+
+                            <div class="font-serif space-y-3 md:space-y-4 px-2">
+                                <div class="py-3 px-4 md:py-4 md:px-6 rounded-lg shadow-sm relative"
+                                    style="background: linear-gradient(135deg, #FFFFFF, #FFF5F5); border-left: 4px solid #DC143C;">
+                                    <p class="text-xs uppercase mb-1 md:mb-2 tracking-widest font-semibold"
+                                        style="color: #B22222;">Ông</p>
+                                    <p class="text-xl md:text-2xl font-bold" style="color: #8B0000;">Trần Đình Tuyến</p>
+                                </div>
+                                <div class="py-3 px-4 md:py-4 md:px-6 rounded-lg shadow-sm relative"
+                                    style="background: linear-gradient(135deg, #FFFFFF, #FFF5F5); border-left: 4px solid #DC143C;">
+                                    <p class="text-xs uppercase mb-1 md:mb-2 tracking-widest font-semibold"
+                                        style="color: #B22222;">Bà</p>
+                                    <p class="text-xl md:text-2xl font-bold" style="color: #8B0000;">Nguyễn Thị Duyên
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- BRIDE FAMILY -->
+                        <div class="text-center space-y-4 md:space-y-6 relative">
+                            <div class="inline-block px-4 py-2 rounded-lg shadow-md relative"
+                                style="background: linear-gradient(135deg, rgba(220,20,60,0.08), rgba(220,20,60,0.04)); border: 2px solid rgba(220,20,60,0.2);">
+                                <span class="font-serif text-lg md:text-xl font-bold uppercase tracking-wider"
+                                    style="color: #8B0000;">Nhà Gái</span>
+                            </div>
+
+                            <div class="font-serif space-y-3 md:space-y-4 px-2">
+                                <div class="py-3 px-4 md:py-4 md:px-6 rounded-lg shadow-sm relative"
+                                    style="background: linear-gradient(135deg, #FFFFFF, #FFF5F5); border-left: 4px solid #DC143C;">
+                                    <p class="text-xs uppercase mb-1 md:mb-2 tracking-widest font-semibold"
+                                        style="color: #B22222;">Ông</p>
+                                    <p class="text-xl md:text-2xl font-bold" style="color: #8B0000;">Nguyễn Văn Bắc</p>
+                                </div>
+                                <div class="py-3 px-4 md:py-4 md:px-6 rounded-lg shadow-sm relative"
+                                    style="background: linear-gradient(135deg, #FFFFFF, #FFF5F5); border-left: 4px solid #DC143C;">
+                                    <p class="text-xs uppercase mb-1 md:mb-2 tracking-widest font-semibold"
+                                        style="color: #B22222;">Bà</p>
+                                    <p class="text-xl md:text-2xl font-bold" style="color: #8B0000;">Nguyễn Thị Phương
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Couple Names Section -->
+                    <div class="text-center mt-16">
+                        <div class="flex items-center justify-center gap-3 mb-6">
+                            <div class="h-px w-24"
+                                style="background: linear-gradient(90deg, transparent, rgba(220,20,60,0.4));"></div>
+                            <span class="text-xl" style="color: #D4AF37;">❖</span>
+                            <div class="h-px w-24"
+                                style="background: linear-gradient(270deg, transparent, rgba(220,20,60,0.4));"></div>
+                        </div>
+
+                        <div class="inline-block px-10 py-5 rounded-xl shadow-lg relative"
+                            style="background: linear-gradient(135deg, #FFF5F5, #FFFFFF, #FFF5F5); border: 3px solid rgba(220,20,60,0.3);">
+                            <div class="absolute -top-2 -left-2 w-6 h-6 rounded-full"
+                                style="background: radial-gradient(circle, #DC143C, transparent);"></div>
+                            <div class="absolute -top-2 -right-2 w-6 h-6 rounded-full"
+                                style="background: radial-gradient(circle, #DC143C, transparent);"></div>
+                            <div class="absolute -bottom-2 -left-2 w-6 h-6 rounded-full"
+                                style="background: radial-gradient(circle, #DC143C, transparent);"></div>
+                            <div class="absolute -bottom-2 -right-2 w-6 h-6 rounded-full"
+                                style="background: radial-gradient(circle, #DC143C, transparent);"></div>
+
+                            <p class="font-script text-5xl md:text-6xl" style="color: #8B0000;">
+                                Trần Hoàng
+                                <span class="inline-block text-4xl md:text-5xl mx-3"
+                                    style="color: #DC143C;">&amp;</span>
+                                Lan Anh
+                            </p>
+                        </div>
+
+                        <div class="flex items-center justify-center gap-3 mt-6">
+                            <span class="text-2xl" style="color: #DC143C;">❖</span>
+                            <div class="h-px w-16"
+                                style="background: linear-gradient(90deg, rgba(220,20,60,0.4), transparent, rgba(220,20,60,0.4));">
+                            </div>
+                            <span class="text-2xl" style="color: #DC143C;">❖</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- PART 6: EVENTS TIMELINE -->
+        <section class="py-20 bg-white">
+            <div class="max-w-5xl mx-auto px-4">
+                <h2 class="text-center font-serif text-4xl text-burgundy mb-16">Sự Kiện Quan Trọng</h2>
+
+                <div class="grid md:grid-cols-3 gap-8">
+
+                    <!-- Event 1 -->
+                    <div
+                        class="bg-cream rounded-xl p-6 shadow-lg border border-gray-200 hover:shadow-xl transition-all">
+                        <div class="text-center mb-4">
+                            <div
+                                class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 border-2 border-burgundy text-burgundy">
+                                <span
+                                    class="material-symbols-outlined text-3xl js-replaced-missing-icon">radio_button_unchecked</span>
+                            </div>
+                            <h3 class="font-serif text-xl font-bold text-burgundy uppercase">Lễ Nạp Tài &amp; Ăn Hỏi
+                            </h3>
+                        </div>
+                        <div class="space-y-3 text-center text-gray-700">
+                            <p class="flex items-center justify-center gap-2 font-bold">
+                                <span class="material-symbols-outlined text-sm">calendar_month</span> 13:30 | 25/12/2025
+                            </p>
+                            <p class="text-sm italic">(Âm lịch: 06/11 năm Ất Tỵ)</p>
+                            <hr class="border-gray-300 w-1/2 mx-auto">
+                            <p class="text-sm">Nghi thức truyền thống tại tư gia Nhà Gái</p>
+                        </div>
+                    </div>
+
+                    <!-- Event 2 -->
+                    <div
+                        class="bg-white rounded-xl p-6 shadow-lg border-2 border-gold/50 hover:shadow-xl transition-all relative overflow-hidden">
+                        <div
+                            class="absolute top-0 right-0 bg-gold/20 text-xs px-2 py-1 rounded-bl text-darkText font-bold">
+                            Thân Mật</div>
+                        <div class="text-center mb-4">
+                            <div
+                                class="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4 border-2 border-gold text-yellow-700">
+                                <span class="material-symbols-outlined text-3xl">restaurant_menu</span>
+                            </div>
+                            <h3 class="font-serif text-xl font-bold text-yellow-800 uppercase">Tiệc Mời Cơm</h3>
+                        </div>
+                        <div class="space-y-3 text-center text-gray-700">
+                            <p class="flex items-center justify-center gap-2 font-bold">
+                                <span class="material-symbols-outlined text-sm">schedule</span> 18:00 | 26/12/2025
+                            </p>
+                            <p class="text-sm">Tư gia Nhà Trai<br>Phố Trần Hưng, P. Đông Quang, TP. Thanh Hóa</p>
+                            <a href="https://www.google.com/maps/search/?api=1&amp;query=Phố+Trần+Hưng,+P.+Đông+Quang,+TP.+Thanh+Hóa"
+                                target="_blank"
+                                class="inline-block mt-4 bg-yellow-600 text-white px-4 py-2 rounded-full text-sm hover:bg-yellow-700 transition-colors">
+                                Xem bản đồ
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Event 3 (Main) -->
+                    <div
+                        class="bg-burgundy text-white rounded-xl p-6 shadow-2xl transform md:-translate-y-4 md:scale-105 border-2 border-gold relative">
+                        <div
+                            class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold text-burgundy font-bold px-4 py-1 rounded-full text-sm shadow uppercase tracking-widest">
+                            Tiệc Chính</div>
+                        <div class="text-center mb-4 mt-2">
+                            <div
+                                class="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4 border-2 border-gold text-gold">
+                                <span class="material-symbols-outlined text-4xl">celebration</span>
+                            </div>
+                            <h3 class="font-serif text-2xl font-bold text-gold uppercase">Lễ Thành Hôn</h3>
+                        </div>
+                        <div class="space-y-4 text-center">
+                            <div class="bg-white/10 py-2 rounded">
+                                <p class="text-3xl font-bold font-serif">11:00</p>
+                                <p class="text-gold font-bold">Thứ Bảy, 27/12/2025</p>
+                            </div>
+                            <p class="text-white/90">Tư gia Nhà Trai<br>Phố Trần Hưng, P. Đông Quang, TP. Thanh Hóa</p>
+                            <a href="https://www.google.com/maps/search/?api=1&amp;query=Phố+Trần+Hưng,+P.+Đông+Quang,+TP.+Thanh+Hóa"
+                                target="_blank"
+                                class="inline-block w-full bg-gold text-burgundy font-bold px-6 py-3 rounded-full hover:bg-white transition-colors uppercase text-sm tracking-wide">
+                                <span class="material-symbols-outlined align-middle text-lg mr-1">location_on</span> Chỉ
+                                đường
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    
+        <!-- PART 4: LOVE STORY -->
+        <section class="py-20 bg-white">
+            <div class="max-w-5xl mx-auto px-4">
+                <h2
+                    class="text-center font-serif text-4xl text-burgundy mb-16 relative inline-block left-1/2 -translate-x-1/2 pb-4 border-b-2 border-gold">
+                    Hành Trình Yêu
+                </h2>
+
+                <div
+                    class="relative space-y-12 before:content-[''] before:absolute before:inset-0 before:ml-5 md:before:ml-[50%] before:-translate-x-px before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-gold before:to-transparent">
+
+                    <!-- Timeline Item 1 -->
+                    <div
+                        class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                        <div
+                            class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-burgundy shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 text-white">
+                            <span class="material-symbols-outlined text-sm">favorite</span>
+                        </div>
+                        <div
+                            class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-cream p-6 rounded-lg shadow-lg border-l-4 border-gold transition-transform hover:-translate-y-1">
+                            <time class="font-serif text-burgundy font-bold block mb-2">Ngày Đầu Gặp Gỡ</time>
+                            <img src="./images/Timeline1.png" alt="First Date"
+                                class="w-full h-48 object-cover rounded mb-4 hover:sepia transition-all">
+                            <p class="text-gray-600 text-sm italic">"Chỉ là một buổi cafe tình cờ, nhưng ánh mắt ấy đã
+                                giữ anh lại..."</p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 2 -->
+                    <div
+                        class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                        <div
+                            class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-burgundy shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 text-white">
+                            <span class="material-symbols-outlined text-sm">filter_vintage</span>
+                        </div>
+                        <div
+                            class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-cream p-6 rounded-lg shadow-lg border-r-4 border-gold transition-transform hover:-translate-y-1">
+                            <time class="font-serif text-burgundy font-bold block mb-2">Lời Tỏ Tình</time>
+                            <img src="./images/Timeline2.png" alt="Confession"
+                                class="w-full h-48 object-cover rounded mb-4 hover:sepia transition-all">
+                            <p class="text-gray-600 text-sm italic">"Anh muốn được chăm sóc em mỗi ngày. Làm người yêu
+                                anh nhé!"</p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 3 -->
+                    <div
+                        class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                        <div
+                            class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-burgundy shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 text-white">
+                            <span class="material-symbols-outlined text-sm">diamond</span>
+                        </div>
+                        <div
+                            class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-cream p-6 rounded-lg shadow-lg border-l-4 border-gold transition-transform hover:-translate-y-1">
+                            <time class="font-serif text-burgundy font-bold block mb-2">Ngày Cầu Hôn</time>
+                            <img src="./images/Timeline3.png" alt="Proposal"
+                                class="w-full h-48 object-cover rounded mb-4 hover:sepia transition-all">
+                            <p class="text-gray-600 text-sm italic">"Em đồng ý!" - Khoảnh khắc hạnh phúc vỡ òa.</p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 4 -->
+                    <div
+                        class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                        <div
+                            class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-gold shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 text-white">
+                            <span class="material-symbols-outlined text-sm">church</span>
+                        </div>
+                        <div
+                            class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-burgundy p-6 rounded-lg shadow-lg text-white text-center transform scale-105 border-4 border-gold/50">
+                            <time class="font-serif font-bold block mb-2 text-2xl text-gold">27 . 12 . 2025</time>
+                            <p class="text-white text-lg italic font-script">"Và hôm nay, chúng mình nên duyên vợ chồng"
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- PART 5: GALLERY -->
+        <section class="py-20 bg-cream">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="font-serif text-4xl text-burgundy mb-2">Khoảnh Khắc Hạnh Phúc</h2>
+                    <p class="font-script text-2xl text-gold">Sweet Moments</p>
+                </div>
+
+                <div class="columns-2 md:columns-3 gap-4 space-y-4">
+                    <!-- Image 1 -->
+                    <div class="break-inside-avoid relative group overflow-hidden rounded-lg cursor-pointer"
+                        onclick="openLightbox(this)">
+                        <img src="./images/album02.png" alt="Wedding 1"
+                            class="w-full h-auto transform transition-transform duration-500 group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="material-symbols-outlined text-white text-3xl">zoom_in</span>
+                        </div>
+                    </div>
+                    <!-- Image 2 -->
+                    <div class="break-inside-avoid relative group overflow-hidden rounded-lg cursor-pointer"
+                        onclick="openLightbox(this)">
+                        <img src="./images/album03.png" alt="Wedding 2"
+                            class="w-full h-auto transform transition-transform duration-500 group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="material-symbols-outlined text-white text-3xl">zoom_in</span>
+                        </div>
+                    </div>
+                    <!-- Image 3 -->
+                    <div class="break-inside-avoid relative group overflow-hidden rounded-lg cursor-pointer"
+                        onclick="openLightbox(this)">
+                        <img src="./images/album04.png" alt="Wedding 3"
+                            class="w-full h-auto transform transition-transform duration-500 group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="material-symbols-outlined text-white text-3xl">zoom_in</span>
+                        </div>
+                    </div>
+                    <!-- Image 4 -->
+                    <div class="break-inside-avoid relative group overflow-hidden rounded-lg cursor-pointer"
+                        onclick="openLightbox(this)">
+                        <img src="./images/album05.png" alt="Wedding 4"
+                            class="w-full h-auto transform transition-transform duration-500 group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="material-symbols-outlined text-white text-3xl">zoom_in</span>
+                        </div>
+                    </div>
+                    <!-- Image 5 -->
+                    <div class="break-inside-avoid relative group overflow-hidden rounded-lg cursor-pointer"
+                        onclick="openLightbox(this)">
+                        <img src="./images/album06.png" alt="Wedding 5"
+                            class="w-full h-auto transform transition-transform duration-500 group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="material-symbols-outlined text-white text-3xl">zoom_in</span>
+                        </div>
+                    </div>
+                    <!-- Image 6 -->
+                    <div class="break-inside-avoid relative group overflow-hidden rounded-lg cursor-pointer"
+                        onclick="openLightbox(this)">
+                        <img src="./images/album07.png" alt="Wedding 6"
+                            class="w-full h-auto transform transition-transform duration-500 group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="material-symbols-outlined text-white text-3xl">zoom_in</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PART 7: WISHES & GIFTS -->
+        <section class="py-20 bg-cream">
+            <div class="max-w-4xl mx-auto px-4">
+
+                <!-- Guestbook -->
+                <div class="mb-16">
+                    <h2 class="text-center font-serif text-3xl text-burgundy mb-8">Sổ Lưu Bút Online</h2>
+                    <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                        <!-- Display Area -->
+                        <div class="h-48 overflow-hidden relative mb-6 bg-gray-50 rounded border border-gray-100 p-4">
+                            <div id="wishesContainer" class="space-y-4 transition-all duration-500">
+                                <div class="p-3 bg-white rounded shadow-sm border-l-4 border-gold">
+                                    <p class="font-bold text-burgundy text-sm">Bạn Thân (Demo)</p>
+                                    <p class="text-gray-600 italic">"Chúc hai bạn trăm năm hạnh phúc, sớm sinh quý tử
+                                        nhé!"</p>
+                                </div>
+                                <div class="p-3 bg-white rounded shadow-sm border-l-4 border-burgundy">
+                                    <p class="font-bold text-burgundy text-sm">Gia đình cô Tư</p>
+                                    <p class="text-gray-600 italic">"Mừng hạnh phúc hai con. Yêu thương đong đầy!"</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Input Form -->
+                        <form id="wishForm" onsubmit="addWish(event)" class="space-y-4">
+                            <input type="text" id="guestName" placeholder="Tên của bạn" required=""
+                                class="w-full border-gray-300 rounded-lg focus:ring-burgundy focus:border-burgundy p-3 border">
+                            <textarea id="guestMsg" placeholder="Lời chúc gửi đến Hoàng &amp; Lan Anh..." required=""
+                                class="w-full border-gray-300 rounded-lg focus:ring-burgundy focus:border-burgundy p-3 border h-24"></textarea>
+                            <button type="submit"
+                                class="w-full bg-burgundy text-white font-bold py-3 rounded-lg hover:bg-red-800 transition-colors">Gửi
+                                Lời Chúc</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Gifts -->
+                <div class="text-center">
+                    <h2 class="font-serif text-3xl text-burgundy mb-2">Hộp Quà Mừng</h2>
+                    <p class="text-gray-600 italic mb-8 max-w-lg mx-auto">"Sự hiện diện của bạn là món quà quý giá nhất.
+                        Tuy nhiên, nếu không thể tham dự, bạn có thể gửi chút tình cảm qua đây nhé..."</p>
+
+                    <div class="bg-white rounded-xl shadow-xl overflow-hidden max-w-lg mx-auto border border-gray-200">
+                        <div class="flex border-b">
+                            <button onclick="switchTab('groom')" id="tabGroom"
+                                class="flex-1 py-4 font-bold text-burgundy border-b-2 border-burgundy bg-gray-50">Mừng
+                                Chú Rể</button>
+                            <button onclick="switchTab('bride')" id="tabBride"
+                                class="flex-1 py-4 text-gray-500 hover:text-burgundy">Mừng Cô Dâu</button>
+                        </div>
+
+                        <div class="p-8">
+                            <!-- Groom Content -->
+                            <div id="contentGroom" class="block animate-fade-in-up">
+                                <div
+                                    class="w-48 h-48 mx-auto bg-gray-200 mb-4 flex items-center justify-center text-gray-400 rounded-lg border-2 border-dashed border-gray-300">
+                                    <img src="./images/QR1.png" alt="QR Groom" class="w-full h-full object-cover">
+                                </div>
+                                <p class="font-bold text-xl text-burgundy">TRẦN HOÀNG</p>
+                                <p class="text-gray-600">Vietcombank: 9999.8888.7777</p>
+                            </div>
+
+                            <!-- Bride Content -->
+                            <div id="contentBride" class="hidden animate-fade-in-up">
+                                <div
+                                    class="w-48 h-48 mx-auto bg-gray-200 mb-4 flex items-center justify-center text-gray-400 rounded-lg border-2 border-dashed border-gray-300">
+                                    <img src="./images/QR2.png" alt="QR Bride" class="w-full h-full object-cover">
+                                </div>
+                                <p class="font-bold text-xl text-burgundy">LAN ANH</p>
+                                <p class="text-gray-600">Techcombank: 1111.2222.3333</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PART 8: FOOTER -->
+        <footer class="relative py-20 bg-black text-white text-center overflow-hidden">
+            <div class="absolute inset-0 opacity-40 grayscale"
+                style="background-image: url('./images/footer.png'); background-size: cover; background-position: center center;">
+            </div>
+            <div class="relative z-10 px-4">
+                <h2 class="font-script text-5xl md:text-6xl mb-6">Thank You</h2>
+                <p class="font-serif text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-8">
+                    "Cảm ơn bạn đã ghé thăm và chia sẻ niềm vui cùng vợ chồng mình. Hẹn gặp lại bạn vào ngày 27/12 nhé!"
+                </p>
+                <div class="inline-block border border-white/30 px-6 py-2 rounded-full backdrop-blur-sm">
+                    <p class="tracking-widest text-sm md:text-base">#HoangLanAnhWedding #27122025</p>
+                </div>
+                <p class="mt-12 text-xs text-gray-500">Designed with ❤️ for our special day</p>
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="fixed inset-0 z-[60] bg-black/95 hidden items-center justify-center p-4"
+        onclick="closeLightbox()">
+        <img id="lightboxImg" src=""
+            class="max-h-[90vh] max-w-full rounded shadow-2xl transform scale-95 transition-transform duration-300">
+        <button class="absolute top-4 right-4 text-white p-2">
+            <span class="material-symbols-outlined text-4xl">close</span>
+        </button>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // --- 1. Intro Typewriter & Reveal ---
+        const text = "Hạnh phúc không phải là điểm đến, mà là hành trình...";
+        const typingElement = document.getElementById('typingText');
+        const openBtn = document.getElementById('openBtn');
+        const introScreen = document.getElementById('introScreen');
+        const mainContent = document.getElementById('mainContent');
+        const musicToggle = document.getElementById('musicToggle');
+        const bgMusic = document.getElementById('bgMusic');
+        const typingSound = new Audio('./audio/typing.mp3');
+        typingSound.volume = 0.4;
+        typingSound.preload = 'auto';
+        typingSound.loop = true;
+        let i = 0;
+
+        function typeWriter() {
+            if (i < text.length) {
+                typingElement.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 80);
+            } else {
+                // ✅ Dừng tiếng gõ phím
+                typingSound.pause();
+                typingSound.currentTime = 0;
+                
+                // ✅ Dừng con trỏ nhấp nháy
+                typingElement.classList.remove('typewriter');
+                typingElement.style.borderRight = 'none';
+                
+                // ✅ Chờ 1 giây rồi chuyển sang Part 2
+                setTimeout(() => {
+                    introScreen.style.opacity = '0';
+                    setTimeout(() => {
+                        introScreen.style.display = 'none';
+                        mainContent.style.opacity = '1';
+                        playMusic();
+                    }, 1000);
+                }, 800);
+            }
+        }
+
+        // Start typing on load
+        // window.onload = () => {
+        //     // Ensure font is loaded roughly
+        //     setTimeout(typeWriter, 500);
+        // };
+
+        // ✅ Khi click nút "Mở thiệp hồng"
+        openBtn.addEventListener('click', () => {
+            // Ẩn nút sau khi click
+            openBtn.style.display = 'none';
+            
+            // Phát tiếng gõ bàn phím
+            typingSound.play();
+            
+            // Bắt đầu hiệu ứng typewriter
+            typeWriter();
+        });
+
+        // --- 2. Music Control ---
+        let isPlaying = false;
+
+        function playMusic() {
+            bgMusic.volume = 0.5;
+            bgMusic.play().then(() => {
+                isPlaying = true;
+                musicToggle.classList.remove('hidden');
+            }).catch(e => {
+                console.log("Autoplay blocked, waiting for interaction");
+                musicToggle.classList.remove('hidden'); // Show button anyway
+            });
+        }
+
+        musicToggle.addEventListener('click', () => {
+            if (isPlaying) {
+                bgMusic.pause();
+                document.getElementById('musicIcon').innerText = 'music_off';
+                document.getElementById('musicIcon').classList.remove('animate-spin-slow');
+            } else {
+                bgMusic.play();
+                document.getElementById('musicIcon').innerText = 'music_note';
+                document.getElementById('musicIcon').classList.add('animate-spin-slow');
+            }
+            isPlaying = !isPlaying;
+        });
+
+        // --- 3. Countdown Timer ---
+        const weddingDate = new Date('December 27, 2025 11:00:00').getTime();
+
+        const timer = setInterval(function () {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days < 10 ? '0' + days : days;
+            document.getElementById("hours").innerText = hours < 10 ? '0' + hours : hours;
+            document.getElementById("minutes").innerText = minutes < 10 ? '0' + minutes : minutes;
+            document.getElementById("seconds").innerText = seconds < 10 ? '0' + seconds : seconds;
+
+            if (distance < 0) {
+                clearInterval(timer);
+                document.getElementById("countdown").innerHTML = "We are Married!";
+            }
+        }, 1000);
+
+        // --- 4. Lightbox ---
+        function openLightbox(element) {
+            const imgSrc = element.querySelector('img').src;
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightboxImg');
+
+            lightboxImg.src = imgSrc;
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex');
+
+            // Small delay for animation
+            setTimeout(() => {
+                lightboxImg.style.transform = 'scale(1)';
+            }, 10);
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightboxImg');
+
+            lightboxImg.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                lightbox.classList.add('hidden');
+                lightbox.classList.remove('flex');
+            }, 300);
+        }
+
+        // --- 5. Gift Tabs ---
+        function switchTab(person) {
+            const tabGroom = document.getElementById('tabGroom');
+            const tabBride = document.getElementById('tabBride');
+            const contentGroom = document.getElementById('contentGroom');
+            const contentBride = document.getElementById('contentBride');
+
+            if (person === 'groom') {
+                tabGroom.classList.add('text-burgundy', 'border-b-2', 'border-burgundy', 'font-bold', 'bg-gray-50');
+                tabGroom.classList.remove('text-gray-500');
+
+                tabBride.classList.remove('text-burgundy', 'border-b-2', 'border-burgundy', 'font-bold', 'bg-gray-50');
+                tabBride.classList.add('text-gray-500');
+
+                contentGroom.classList.remove('hidden');
+                contentBride.classList.add('hidden');
+            } else {
+                tabBride.classList.add('text-burgundy', 'border-b-2', 'border-burgundy', 'font-bold', 'bg-gray-50');
+                tabBride.classList.remove('text-gray-500');
+
+                tabGroom.classList.remove('text-burgundy', 'border-b-2', 'border-burgundy', 'font-bold', 'bg-gray-50');
+                tabGroom.classList.add('text-gray-500');
+
+                contentBride.classList.remove('hidden');
+                contentGroom.classList.add('hidden');
+            }
+        }
+
+        // --- 6. Guestbook Logic (Simulated) ---
+        function addWish(e) {
+            e.preventDefault();
+            const name = document.getElementById('guestName').value;
+            const msg = document.getElementById('guestMsg').value;
+            const container = document.getElementById('wishesContainer');
+
+            const newWish = document.createElement('div');
+            newWish.className = "p-3 bg-white rounded shadow-sm border-l-4 border-burgundy animate-fade-in-up";
+            newWish.innerHTML = `
+                <p class="font-bold text-burgundy text-sm">${name}</p>
+                <p class="text-gray-600 italic">"${msg}"</p>
+            `;
+
+            container.prepend(newWish);
+
+            // Reset form
+            document.getElementById('wishForm').reset();
+            alert("Cảm ơn lời chúc của bạn!");
+        }
+
+        // --- 7. Download Source Code Function ---
+        function downloadSource() {
+            // Get the current HTML
+            let htmlContent = document.documentElement.outerHTML;
+
+            // Create a Blob
+            const blob = new Blob([htmlContent], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+
+            // Create a temporary link to download
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'thiep-cuoi-hoang-lan-anh.html';
+            document.body.appendChild(a);
+            a.click();
+
+            // Cleanup
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+    </script>
+
+</body>
+
+</html>
