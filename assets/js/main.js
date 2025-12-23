@@ -38,22 +38,22 @@ function typeWriter() {
     }
 }
 
-// ============ CHẾ ĐỘ TEST - Bật/Tắt Part 1 ============
-const SKIP_INTRO = false; // 🔧 Đổi thành false để bật lại Part 1
-// ======================================================
+// // ============ CHẾ ĐỘ TEST - Bật/Tắt Part 1 ============
+// const SKIP_INTRO = false; // 🔧 Đổi thành false để bật lại Part 1
+// // ======================================================
 
-window.onload = () => {
-    if (SKIP_INTRO) {
-        // Ẩn intro, hiện main content ngay
-        introScreen.style.display = 'none';
-        mainContent.style.opacity = '1';
-        musicToggle.classList.remove('hidden');
-        // bgMusic.play(); // Bỏ comment nếu muốn tự phát nhạc
-    } else {
-        // Chạy bình thường - hiện nút "Mở thiệp hồng"
-        openBtn.classList.remove('opacity-0', 'translate-y-4');
-    }
-};
+// window.onload = () => {
+//     if (SKIP_INTRO) {
+//         // Ẩn intro, hiện main content ngay
+//         introScreen.style.display = 'none';
+//         mainContent.style.opacity = '1';
+//         musicToggle.classList.remove('hidden');
+//         // bgMusic.play(); // Bỏ comment nếu muốn tự phát nhạc
+//     } else {
+//         // Chạy bình thường - hiện nút "Mở thiệp hồng"
+//         openBtn.classList.remove('opacity-0', 'translate-y-4');
+//     }
+// };
 
 // ✅ Khi click nút "Mở thiệp hồng"
 openBtn.addEventListener('click', () => {

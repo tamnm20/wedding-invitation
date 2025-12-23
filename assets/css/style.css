@@ -9,12 +9,17 @@ body {
 }
 
 .parallax {
-    background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
+/* CHỈ desktop mới fixed */
+@media (min-width: 768px) {
+  .parallax {
+    background-attachment: fixed;
+  }
+}
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
     width: 8px;
