@@ -38,22 +38,22 @@ function typeWriter() {
     }
 }
 
-// // ============ CHẾ ĐỘ TEST - Bật/Tắt Part 1 ============
-// const SKIP_INTRO = false; // 🔧 Đổi thành false để bật lại Part 1
-// // ======================================================
+// ============ CHẾ ĐỘ TEST - Bật/Tắt Part 1 ============
+const SKIP_INTRO = true; // 🔧 Đổi thành false để bật lại Part 1
+// ======================================================
 
-// window.onload = () => {
-//     if (SKIP_INTRO) {
-//         // Ẩn intro, hiện main content ngay
-//         introScreen.style.display = 'none';
-//         mainContent.style.opacity = '1';
-//         musicToggle.classList.remove('hidden');
-//         // bgMusic.play(); // Bỏ comment nếu muốn tự phát nhạc
-//     } else {
-//         // Chạy bình thường - hiện nút "Mở thiệp hồng"
-//         openBtn.classList.remove('opacity-0', 'translate-y-4');
-//     }
-// };
+window.onload = () => {
+    if (SKIP_INTRO) {
+        // Ẩn intro, hiện main content ngay
+        introScreen.style.display = 'none';
+        mainContent.style.opacity = '1';
+        musicToggle.classList.remove('hidden');
+        // bgMusic.play(); // Bỏ comment nếu muốn tự phát nhạc
+    } else {
+        // Chạy bình thường - hiện nút "Mở thiệp hồng"
+        openBtn.classList.remove('opacity-0', 'translate-y-4');
+    }
+};
 
 // ✅ Khi click nút "Mở thiệp hồng"
 openBtn.addEventListener('click', () => {
@@ -233,3 +233,181 @@ function revealInvitation() {
 }
 
 window.addEventListener('scroll', revealInvitation);
+
+document.addEventListener("DOMContentLoaded", () => {
+  const couples = document.querySelectorAll(".couple-reveal");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
+    });
+  }, {
+    threshold: 0.3
+  });
+
+  couples.forEach(el => observer.observe(el));
+});
+
+// ========== RSVP FORM ==========
+const rsvpForm = document.getElementById('rsvpForm');
+const successMessage = document.getElementById('successMessage');
+
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz6tRKC6IvwSuBWY9hypsM7-x0bZ1bBoWppLV4_B9MMbQvyM-fSnCl2Qe0juPgUDHf5Iw/exec';
+
+const wishListEl = document.getElementById('wishList');
+
+function renderWishes(wishes) {
+    if (!wishListEl) return;
+
+    if (!wishes || wishes.length === 0) {
+        wishListEl.innerHTML = '<p class="text-gray-400 text-sm">Chưa có lời chúc nào, hãy là người đầu tiên nhé 🥰</p>';
+        return;
+    }
+
+    wishListEl.innerHTML = '';
+
+    wishes.forEach(function(wish) {
+        const item = document.createElement('div');
+        item.className = 'bg-pink-50/60 rounded-lg px-3 py-2 sm:px-4 sm:py-3';
+        item.innerHTML = `
+            <p class="font-semibold text-gray-800 text-sm sm:text-base">${wish.name || 'Ẩn danh'}</p>
+            <p class="text-gray-700 text-sm sm:text-base mt-1 whitespace-pre-line">${wish.message || ''}</p>
+        `;
+        wishListEl.appendChild(item);
+    });
+}
+
+function loadWishes() {
+    fetch(GOOGLE_SCRIPT_URL)
+        .then(function(res) { return res.json(); })
+        .then(function(data) {
+            renderWishes(data);
+        })
+        .catch(function(err) {
+            console.error('Không tải được lời chúc:', err);
+        });
+}
+
+// Form submit
+if (rsvpForm) {
+    rsvpForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+                
+        const formData = new FormData(rsvpForm);
+        const data = {
+            name: formData.get('name'),
+            phone: formData.get('phone'),
+            guestType: formData.get('guestType'),
+            attendance: formData.get('attendance'),
+            message: formData.get('message')
+        };
+
+        console.log('RSVP Data:', data);
+
+        fetch(GOOGLE_SCRIPT_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        }).catch(error => {
+            console.error('Error sending to Google Script:', error);
+        });
+
+        // Hiệu ứng cảm ơn
+        rsvpForm.style.opacity = '0';
+        rsvpForm.style.transform = 'translateY(-20px)';
+                
+        setTimeout(() => {
+            rsvpForm.classList.add('hidden');
+            successMessage.classList.remove('hidden');
+            successMessage.style.opacity = '0';
+            successMessage.style.transform = 'translateY(20px)';
+                    
+            setTimeout(() => {
+                successMessage.style.transition = 'all 0.5s ease';
+                successMessage.style.opacity = '1';
+                successMessage.style.transform = 'translateY(0)';
+            }, 50);
+        }, 300);
+
+        successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+        // Load lại lời chúc sau khi gửi (delay nhẹ cho chắc chắn đã ghi sheet)
+        setTimeout(loadWishes, 1500);
+    });
+}
+
+function syncWishHeight() {
+    const wishCard = document.getElementById('wishCard');
+    const wishList = document.getElementById('wishList');
+    const rsvpForm = document.getElementById('rsvpForm');
+    const successMessage = document.getElementById('successMessage');
+
+    if (!wishCard || !wishList || !rsvpForm) return;
+
+    let leftCard = rsvpForm;
+
+    // Chỉ áp dụng trên desktop (md: 768px trở lên)
+    if (window.innerWidth < 768) {
+        // Mobile: để tự nhiên
+        wishCard.style.height = 'auto';
+        wishList.style.maxHeight = 'none';
+        return;
+    }
+
+    // Reset trước khi tính lại
+    wishCard.style.height = 'auto';
+    wishList.style.maxHeight = 'none';
+
+    // Lấy chiều cao card bên trái (form hoặc success)
+    const targetHeight = leftCard.offsetHeight;
+    if (!targetHeight) return;
+
+    // Đặt chiều cao card "Lời chúc" = chiều cao card bên trái
+    wishCard.style.height = targetHeight + 'px';
+
+    // Tính khoảng trống còn lại cho vùng danh sách (#wishList)
+    const styles = getComputedStyle(wishCard);
+    const paddingTop = parseFloat(styles.paddingTop);
+    const paddingBottom = parseFloat(styles.paddingBottom);
+
+    const title = wishCard.querySelector('h3');
+    const titleHeight = title ? title.offsetHeight : 0;
+    const gap = 16; // khoảng cách nhỏ giữa tiêu đề và list
+
+    const available = targetHeight - paddingTop - paddingBottom - titleHeight - gap;
+    if (available > 0) {
+        wishList.style.maxHeight = available + 'px';
+    }
+}
+
+window.addEventListener('load', syncWishHeight);
+
+// Lần đầu mở trang: tải lời chúc + refresh mỗi 1 giây
+loadWishes();
+setInterval(loadWishes, 2000);
+
+// ========== SMOOTH SCROLL ==========
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (!href || href === '#') return;
+        const target = document.querySelector(href);
+        if (!target) return;
+
+        e.preventDefault();
+        const headerOffset = 70;
+        const elementPosition = target.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
+    });
+});
+

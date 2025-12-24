@@ -48,8 +48,6 @@
         content="https://tamnm20.github.io/wedding-invitation/images/share_preview1.jpg">
 
     <!-- Viewport -->
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="theme-color" content="#ffffff">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -323,9 +321,16 @@
                     <div class="text-center mb-8 relative">
                         <h2 class="font-serif text-4xl md:text-5xl uppercase tracking-[0.2em] mb-4 font-bold relative inline-block"
                             style="color: #8B0000;">
-                            <span class="text-5xl md:text-6xl">喜</span>
-                            <span class="block text-2xl md:text-3xl mt-2 tracking-widest" style="color: #DC143C;">Thiệp Báo Hỷ</span>
-                            <span class="text-5xl md:text-6xl" style="color: #8B0000;">喜</span>
+                        <div class="flex justify-center mb-4">
+                            <img src="./images/hy.png"
+                                alt="Chữ Hỷ"
+                                class="hy-symbol w-16 md:w-20 h-auto">
+                        </div>
+
+                        <span class="block text-2xl md:text-3xl mt-2 tracking-widest text-center"
+                            style="color: #DC143C;">
+                            Thiệp Báo Hỷ
+                        </span>
                         </h2>
 
                         <div class="flex items-center justify-center gap-2 my-3">
@@ -352,33 +357,55 @@
 
                         <!-- GROOM FAMILY -->
                         <div class="text-center space-y-4 md:space-y-6 relative">
+
+                            <!-- TITLE -->
                             <div class="inline-block px-6 py-3 rounded-lg shadow-md relative"
                                 style="background: linear-gradient(135deg, rgba(220,20,60,0.08), rgba(220,20,60,0.04)); border: 2px solid rgba(220,20,60,0.2);">
                                 <span class="font-serif text-xl font-bold uppercase tracking-wider"
                                     style="color: #8B0000;">Nhà Trai</span>
                             </div>
 
+                            <!-- PARENTS -->
                             <div class="font-serif space-y-3 md:space-y-4 px-2">
                                 <div class="py-3 px-4 md:py-4 md:px-6 rounded-lg shadow-sm relative"
                                     style="background: linear-gradient(135deg, #FFFFFF, #FFF5F5); border-left: 4px solid #DC143C;">
                                     <p class="text-xs uppercase mb-1 md:mb-2 tracking-widest font-semibold"
                                         style="color: #B22222;">Ông</p>
-                                    <p class="text-xl md:text-2xl font-bold" style="color: #8B0000;">Trần Đình Tuyến</p>
+                                    <p class="text-xl md:text-2xl font-bold" style="color: #8B0000;">
+                                        Trần Đình Tuyến
+                                    </p>
                                 </div>
+
                                 <div class="py-3 px-4 md:py-4 md:px-6 rounded-lg shadow-sm relative"
                                     style="background: linear-gradient(135deg, #FFFFFF, #FFF5F5); border-left: 4px solid #DC143C;">
                                     <p class="text-xs uppercase mb-1 md:mb-2 tracking-widest font-semibold"
                                         style="color: #B22222;">Bà</p>
-                                    <p class="text-xl md:text-2xl font-bold" style="color: #8B0000;">Nguyễn Thị Duyên</p>
+                                    <p class="text-xl md:text-2xl font-bold" style="color: #8B0000;">
+                                        Nguyễn Thị Duyên
+                                    </p>
                                 </div>
+                            </div>
+
+                            <!-- GROOM INFO (NEW - GIỮ STYLE) -->
+                            <div class="pt-4 md:pt-6 space-y-2">
+
+                                <p class="text-xs uppercase tracking-widest font-semibold"
+                                    style="color: #B22222;">
+                                    Chú rể
+                                </p>
+                                <p class="font-script text-4xl md:text-5xl leading-tight"
+                                    style="color: #8B0000;">
+                                    Trần Hoàng
+                                </p>
                             </div>
                         </div>
 
+
                         <!-- BRIDE FAMILY -->
                         <div class="text-center space-y-4 md:space-y-6 relative">
-                            <div class="inline-block px-4 py-2 rounded-lg shadow-md relative"
+                            <div class="inline-block px-6 py-3 rounded-lg shadow-md relative"
                                 style="background: linear-gradient(135deg, rgba(220,20,60,0.08), rgba(220,20,60,0.04)); border: 2px solid rgba(220,20,60,0.2);">
-                                <span class="font-serif text-lg md:text-xl font-bold uppercase tracking-wider"
+                                <span class="font-serif text-xl font-bold uppercase tracking-wider"
                                     style="color: #8B0000;">Nhà Gái</span>
                             </div>
 
@@ -396,6 +423,31 @@
                                     <p class="text-xl md:text-2xl font-bold" style="color: #8B0000;">Nguyễn Thị Phương</p>
                                 </div>
                             </div>
+                            <!-- Brigde INFO (NEW - GIỮ STYLE) -->
+                            <div class="pt-4 md:pt-6 space-y-2">
+
+                                <p class="text-xs uppercase tracking-widest font-semibold"
+                                    style="color: #B22222;">
+                                    Cô dâu
+                                </p>
+
+                                <p class="font-script text-4xl md:text-5xl leading-tight"
+                                    style="color: #8B0000;">
+                                    Lan Anh
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Couple Photos - thêm margin-top để lùi xuống -->
+                    <div style="margin-top: 80px;" class="flex flex-col sm:flex-row justify-center items-center gap-6 sm:gap-8 mt-8 sm:mt-12 mb-10 sm:mb-12 scale-in">
+                        <div class="w-36 h-36 sm:w-48 sm:h-48 md:w-56 md:h-56 rounded-full overflow-hidden shadow-xl border-4 float"
+                            style="border: 4px solid rgba(220,20,60,0.25);">
+                            <img src="images/couple01.png" alt="Cô dâu" class="w-full h-full object-cover">
+                        </div>
+                        <div class="text-3xl sm:text-4xl text-pink-300 heartbeat">💕</div>
+                        <div class="w-36 h-36 sm:w-48 sm:h-48 md:w-56 md:h-56 rounded-full overflow-hidden shadow-xl border-4 border-white float" 
+                            style="border: 4px solid rgba(220,20,60,0.25);animation-delay: 0.5s;">
+                            <img src="images/couple02.png" alt="Chú rể" class="w-full h-full object-cover">
                         </div>
                     </div>
 
@@ -409,8 +461,10 @@
                                 style="background: linear-gradient(270deg, transparent, rgba(220,20,60,0.4));"></div>
                         </div>
 
-                        <div class="inline-block px-10 py-5 rounded-xl shadow-lg relative"
+                        <div class="inline-block px-10 py-5 rounded-xl shadow-lg relative text-center"
                             style="background: linear-gradient(135deg, #FFF5F5, #FFFFFF, #FFF5F5); border: 3px solid rgba(220,20,60,0.3);">
+
+                            <!-- Decorative dots -->
                             <div class="absolute -top-2 -left-2 w-6 h-6 rounded-full"
                                 style="background: radial-gradient(circle, #DC143C, transparent);"></div>
                             <div class="absolute -top-2 -right-2 w-6 h-6 rounded-full"
@@ -420,12 +474,12 @@
                             <div class="absolute -bottom-2 -right-2 w-6 h-6 rounded-full"
                                 style="background: radial-gradient(circle, #DC143C, transparent);"></div>
 
-                            <p class="font-script text-5xl md:text-6xl" style="color: #8B0000;">
-                                Trần Hoàng
-                                <span class="inline-block text-4xl md:text-5xl mx-3" style="color: #DC143C;">&amp;</span>
-                                Lan Anh
-                            </p>
+                            <!-- IMAGE WORD -->
+                            <img src="images/word.png"
+                                alt="Trần Hoàng & Lan Anh"
+                                class="mx-auto w-[260px] sm:w-[320px] md:w-[420px] lg:w-[480px] object-contain">
                         </div>
+
 
                         <div class="flex items-center justify-center gap-3 mt-6">
                             <span class="text-2xl" style="color: #DC143C;">❖</span>
@@ -680,43 +734,184 @@
         </section>
 
         <!-- PART 7: WISHES & GIFTS -->
-        <section class="py-20 bg-cream">
-            <div class="max-w-4xl mx-auto px-4">
+        <section id="rsvp" class="py-20 bg-cream">
+            <div class="max-w-5xl mx-auto px-4">
 
-                <!-- Guestbook -->
-                <div class="mb-16">
+                <!-- Section Title -->
+                <div class="text-center mb-10 fade-in">
                     <h2 class="text-center font-serif text-3xl text-burgundy mb-8">Sổ Lưu Bút Online</h2>
-                    <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
-                        <!-- Display Area -->
-                        <div class="h-48 overflow-hidden relative mb-6 bg-gray-50 rounded border border-gray-100 p-4">
-                            <div id="wishesContainer" class="space-y-4 transition-all duration-500">
-                                <div class="p-3 bg-white rounded shadow-sm border-l-4 border-gold">
-                                    <p class="font-bold text-burgundy text-sm">Bạn Thân (Demo)</p>
-                                    <p class="text-gray-600 italic">"Chúc hai bạn trăm năm hạnh phúc, sớm sinh quý tử
-                                        nhé!"</p>
-                                </div>
-                                <div class="p-3 bg-white rounded shadow-sm border-l-4 border-burgundy">
-                                    <p class="font-bold text-burgundy text-sm">Gia đình cô Tư</p>
-                                    <p class="text-gray-600 italic">"Mừng hạnh phúc hai con. Yêu thương đong đầy!"</p>
+                    <p class="text-gray-600 max-w-2xl mx-auto">
+                        Sự hiện diện của Quý vị là niềm hạnh phúc lớn nhất đối với chúng tôi.
+                        Rất mong Quý vị dành chút thời gian phản hồi thông tin tham dự bên dưới.
+                    </p>
+                </div>
+
+                <!-- 2 Columns -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:items-stretch">
+                    <!-- RIGHT: WISH LIST -->
+                    <div
+                        id="wishCard"
+                        class="bg-white rounded-2xl p-6 shadow-xl border border-gray-100 fade-in
+                            md:h-full flex flex-col">
+                        <h3 class="font-serif text-xl text-burgundy mb-4">
+                            Lời chúc từ mọi người 💌
+                        </h3>
+
+                        <div id="wishList"
+                            class="space-y-3 pr-2 overflow-y-auto">
+                            <p class="text-gray-400 text-sm">
+                                Chưa có lời chúc nào, hãy là người đầu tiên nhé 🥰
+                            </p>
+                        </div>
+                    </div>
+                    <!-- LEFT: RSVP FORM -->
+                    <div>
+                        <form id="rsvpForm"
+                            class="bg-white rounded-2xl p-6 md:p-8 shadow-xl border border-gray-100 fade-in">
+
+                            <!-- Name -->
+                            <div class="mb-4">
+                                <label class="block font-medium mb-2 text-sm text-darkText">
+                                    Họ và tên <span class="text-burgundy">*</span>
+                                </label>
+                                <input type="text" name="name" required 
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg
+                                        focus:ring-burgundy focus:border-burgundy">
+                            </div>
+
+                            <!-- Phone -->
+                            <div class="mb-4">
+                                <label class="block font-medium mb-2 text-sm text-darkText">
+                                    Số điện thoại <span class="text-burgundy">*</span>
+                                </label>
+                                <input type="tel" name="phone" required 
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg
+                                        focus:ring-burgundy focus:border-burgundy">
+                            </div>
+
+                            <!-- Guest Type -->
+                            <div class="mb-4">
+                                <label class="block font-medium mb-2 text-sm text-darkText">
+                                    Bạn là <span class="text-burgundy">*</span>
+                                </label>
+                                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                                    <label class="custom-radio cursor-pointer">
+                                        <input type="radio" name="guestType" value="groom" class="hidden">
+                                        <span class="block text-center py-2 border rounded-lg
+                                                    border-gray-300 transition">
+                                            Nhà trai
+                                        </span>
+                                    </label>
+                                    <label class="custom-radio cursor-pointer">
+                                        <input type="radio" name="guestType" value="bride" class="hidden">
+                                        <span class="block text-center py-2 border rounded-lg
+                                                    border-gray-300 transition">
+                                            Nhà gái
+                                        </span>
+                                    </label>                                    <label class="custom-radio cursor-pointer">
+                                        <input type="radio" name="guestType" value="mutual" class="hidden">
+                                        <span class="block text-center py-2 border rounded-lg
+                                                    border-gray-300 transition">
+                                            Bạn chung
+                                        </span>
+                                    </label>                                    <label class="custom-radio cursor-pointer">
+                                        <input type="radio" name="guestType" value="other" class="hidden">
+                                        <span class="block text-center py-2 border rounded-lg
+                                                    border-gray-300 transition">
+                                            Khác
+                                        </span>
+                                    </label>
                                 </div>
                             </div>
-                        </div>
 
-                        <!-- Input Form -->
-                        <form id="wishForm" onsubmit="addWish(event)" class="space-y-4">
-                            <input type="text" id="guestName" placeholder="Tên của bạn" required=""
-                                class="w-full border-gray-300 rounded-lg focus:ring-burgundy focus:border-burgundy p-3 border">
-                            <textarea id="guestMsg" placeholder="Lời chúc gửi đến Hoàng &amp; Lan Anh..." required=""
-                                class="w-full border-gray-300 rounded-lg focus:ring-burgundy focus:border-burgundy p-3 border h-24"></textarea>
+                            <!-- Attendance -->
+                            <div class="mb-4">
+                                <label class="block font-medium mb-2 text-sm text-darkText">
+                                    Trạng thái tham dự <span class="text-burgundy">*</span>
+                                </label>
+                                <div class="space-y-2">
+                                    <label class="custom-radio cursor-pointer block">
+                                        <input type="radio" name="attendance" value="attending" class="hidden" required>
+                                        <span
+                                            class="flex items-center py-3 px-4 border rounded-lg transition
+                                                border-gray-300 hover:border-burgundy">
+
+                                            <span class="mr-3 text-lg">🎉</span>
+                                            <span class="font-medium">Mình sẽ tham dự</span>
+
+                                        </span>
+                                    </label>
+                                    <label class="custom-radio cursor-pointer block">
+                                        <input type="radio" name="attendance" value="not_attending" class="hidden" required>
+                                        <span
+                                            class="flex items-center py-3 px-4 border rounded-lg transition
+                                                border-gray-300 hover:border-burgundy">
+
+                                            <span class="mr-3 text-lg">😢</span>
+                                            <span class="font-medium">Thật tiếc mình bận</span>
+
+                                        </span>
+                                    </label>
+                                    <label class="custom-radio cursor-pointer block">
+                                        <input type="radio" name="attendance" value="maybe" class="hidden" required>
+                                        <span
+                                            class="flex items-center py-3 px-4 border rounded-lg transition
+                                                border-gray-300 hover:border-burgundy">
+
+                                            <span class="mr-3 text-lg">🤔</span>
+                                            <span class="font-medium">Mình đang cân nhắc</span>
+
+                                        </span>
+                                    </label>                                    
+                                </div>
+                            </div>
+
+                            <!-- Message -->
+                            <div class="mb-6">
+                                <label class="block font-medium mb-2 text-sm text-darkText">
+                                    Lời nhắn gửi
+                                </label>
+                                <textarea name="message" rows="4"
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg
+                                        focus:ring-burgundy focus:border-burgundy resize-none"
+                                    placeholder="Nhập lời chúc hoặc lời nhắn của bạn..."></textarea>
+                            </div>
+
+                            <!-- Submit -->
                             <button type="submit"
-                                class="w-full bg-burgundy text-white font-bold py-3 rounded-lg hover:bg-red-800 transition-colors">Gửi
-                                Lời Chúc</button>
+                                class="w-full py-3 rounded-full font-semibold tracking-wide
+                                    bg-burgundy text-white hover:bg-red-900 transition">
+                                GỬI XÁC NHẬN 💌
+                            </button>
                         </form>
+                        <!-- Success Message (Hidden by default) -->
+                        <div id="successMessage"
+                            class="hidden text-center
+                                    bg-gradient-to-b from-white to-rose-50
+                                    rounded-2xl p-8 sm:p-10
+                                    shadow-xl border border-burgundy/20">
+
+                            <!-- Icon -->
+                            <div class="text-5xl sm:text-6xl mb-4 text-burgundy">
+                                💌
+                            </div>
+
+                            <!-- Title -->
+                            <h3 class="font-script text-3xl sm:text-4xl mb-4 text-burgundy">
+                                Cảm ơn bạn!
+                            </h3>
+
+                            <!-- Description -->
+                            <p class="text-darkText text-sm sm:text-base leading-relaxed">
+                                Chúng mình đã nhận được phản hồi của bạn.<br>
+                                Hẹn gặp bạn trong <span class="font-semibold text-burgundy">ngày vui</span>!
+                            </p>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Gifts -->
-                <div class="text-center">
+                <div style="margin-top: 80px;" class="text-center">
                     <h2 class="font-serif text-3xl text-burgundy mb-2">Hộp Quà Mừng</h2>
                     <p class="text-gray-600 italic mb-8 max-w-lg mx-auto">"Sự hiện diện của bạn là món quà quý giá nhất.
                         Tuy nhiên, nếu không thể tham dự, bạn có thể gửi chút tình cảm qua đây nhé..."</p>

@@ -54,3 +54,40 @@ body {
         border-color: white;
     }
 }
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.heartbeat {
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.float {
+    animation: float 3s ease-in-out infinite;
+}
+
+.hy-symbol {
+    /* Chuyển ảnh sang màu đỏ giống chữ 喜 */
+    filter: brightness(0) saturate(100%)
+            invert(12%)
+            sepia(85%)
+            saturate(5200%)
+            hue-rotate(-5deg)
+            brightness(90%)
+            contrast(110%);
+}
+
+/* ===== Custom Radio (RSVP) ===== */
+.custom-radio input:checked + span {
+    background: linear-gradient(135deg, #800020, #a52a2a);
+    color: #ffffff;
+    border-color: #800020;
+    box-shadow: 0 6px 16px rgba(128, 0, 32, 0.25);
+}
